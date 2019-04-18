@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo 'Enter device's hostname:'
-read $hostname
+echo "Enter device's hostname:"
+read -r hostname
 
 ln -sf /usr/share/zoneinfo/Europe/Tallinn /etc/localtime
 hwclock --systohc
@@ -11,11 +11,12 @@ sed -i 's/#et_EE.UTF-8\ UTF-8/et_EE.UTF-8\ UTF-8' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
-echo $hostname > /etc/hostname
+echo "$hostname" > /etc/hostname
 
-echo "127.0.0.1		localhost" >> /etc/hosts
-echo "::1		localhost" >> /etc/hosts
-echo "127.0.1.1		$hostname.localdomain	$hostname" >> /etc/hosts
+echo 
+"127.0.0.1		localhost
+::1   localhost
+127.0.1.1		$hostname.localdomain	$hostname" >> /etc/hosts
 
 pacman -S grub bash-completion networkmanager
 
