@@ -13,6 +13,9 @@
 echo "Enter device's hostname:"
 read -r hostname
 
+echo "Enter disk path (/dev/sda)"
+read -r d_path
+
 ln -sf /usr/share/zoneinfo/Europe/Tallinn /etc/localtime
 hwclock --systohc
 
@@ -29,11 +32,7 @@ cat > /etc/hosts <<EOF
 127.0.1.1 $hostname.localdomain	$hostname
 EOF
 
-pacman -S grub bash-completion networkmanager
+pacman -S --noconfirm grub bash-completion networkmanager
 
-echo $"\n\n"
-echo "Enable grub by executing 
-grub-install /dev/sdX1 
-and 
+grub-install $d_path
 grub-mkconfig -o /boot/grub/grub.cfg
-then exit and reboot"
