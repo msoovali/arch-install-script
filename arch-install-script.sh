@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Before running script, be sure base system is installed and bash is in chroot
+# timedatectl set-ntp true
+# lsblk - list available disks
+# cfdisk /dev/sdX - partition selected disk
+# mkfs.ext4 /dev/sdX1 - format partition
+# mount /dev/sdX1 /mnt
+# pacstrap /mnt base base-devel
+# genfstab -U /mnt >> /mnt/etc/fstab
+# arch-chroot /mnt
+
 echo "Enter device's hostname:"
 read -r hostname
 
@@ -21,6 +31,7 @@ EOF
 
 pacman -S grub bash-completion networkmanager
 
+echo $"\n\n"
 echo "Enable grub by executing 
 grub-install /dev/sdX1 
 and 
