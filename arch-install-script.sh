@@ -13,9 +13,11 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 echo "$hostname" > /etc/hostname
 
-echo "127.0.0.1 localhost" >> /etc/hosts
-echo "::1 localhost" >> /etc/hosts
-echo "127.0.1.1 $hostname.localdomain	$hostname" >> /etc/hosts
+cat > /etc/hosts <<EOF
+127.0.0.1 localhost
+::1       localhost
+127.0.1.1 $hostname.localdomain	$hostname
+EOF
 
 pacman -S grub bash-completion networkmanager
 
