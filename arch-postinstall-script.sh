@@ -13,7 +13,7 @@ sudo pacman -S mate mate-extra --noconfirm --needed
 # printing service
 sudo pacman -S cups cups-pdf system-config-printer --noconfirm --needed
 sudo systemctl enable org.cups.cupsd.service
-# fonts
+# some fonts
 sudo pacman -S adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font --noconfirm --needed
 # some useful applications
 sudo pacman -S firefox gimp audacity transmission-gtk vlc --noconfirm --needed
