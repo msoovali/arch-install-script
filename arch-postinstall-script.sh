@@ -7,11 +7,11 @@ sudo pacman -S xorg-server xorg-apps xorg-xinit xf86-video-intel xf86-video-nouv
 sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm --needed
 sudo systemctl enable lightdm.service
 # graphical indicator for networkmanager (not needed for cinnamon/gnome)
-sudo pacman -S network-manager-applet --noconfirm --needed
+#sudo pacman -S network-manager-applet --noconfirm --needed
 # cinnamon desktop environment
-sudo pacman -S cinnamon gnome-terminal gedit --noconfirm --needed
+sudo pacman -S cinnamon gnome-terminal gedit eog nemo-fileroller gnome-screenshot gnome-calculator --noconfirm --needed
 # mate desktop environment
-sudo pacman -S mate mate-extra --noconfirm --needed
+#sudo pacman -S mate mate-extra --noconfirm --needed
 # printing service
 sudo pacman -S cups cups-pdf system-config-printer --noconfirm --needed
 sudo systemctl enable org.cups.cupsd.service
