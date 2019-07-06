@@ -11,13 +11,13 @@ sudo pacman -S network-manager-applet --noconfirm --needed
 # cinnamon desktop environment
 #sudo pacman -S cinnamon gnome-terminal gedit eog nemo-fileroller gnome-screenshot gnome-calculator --noconfirm --needed
 # mate desktop environment
-sudo pacman -S mate mate-extra --noconfirm --needed
+sudo pacman -S mate mate-extra dmenu --noconfirm --needed
 # user directories
 sudo pacman -S xdg-user-dirs-gtk --noconfirm --needed
 # ssh
 sudo pacman -S openssh --noconfirm --needed
 # printing service
-sudo pacman -S cups cups-pdf system-config-printer --noconfirm --needed
+sudo pacman -S cups cups-pdf system-config-printer splix --noconfirm --needed
 sudo systemctl enable org.cups.cupsd.service
 # some fonts
 sudo pacman -S adobe-source-sans-pro-fonts cantarell-fonts noto-fonts noto-fonts-emoji terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font --noconfirm --needed
