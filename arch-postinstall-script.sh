@@ -9,9 +9,9 @@ sudo systemctl enable lightdm.service
 # graphical indicator for networkmanager (not needed for cinnamon/gnome)
 sudo pacman -S network-manager-applet --noconfirm --needed
 # cinnamon desktop environment
-#sudo pacman -S cinnamon gnome-terminal gedit eog nemo-fileroller gnome-screenshot gnome-calculator --noconfirm --needed
+#sudo pacman -S cinnamon gnome-terminal evince gedit eog nemo-fileroller gnome-screenshot gnome-calculator --noconfirm --needed
 # xfce desktop environment
-sudo pacman -S xfce4 xfce4-goodies file-roller --noconfirm --needed
+sudo pacman -S xfce4 xfce4-goodies file-roller evince --noconfirm --needed
 # mate desktop environment
 #sudo pacman -S mate mate-extra --noconfirm --needed
 # user directories
