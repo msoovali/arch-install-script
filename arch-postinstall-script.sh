@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# X server + drivers, remove xf86-video-nouveau if non nvidia device
+# X server + drivers
 sudo pacman -S xorg-server xorg-apps xorg-xinit xf86-video-intel --noconfirm --needed
 # If have nvidia device
 #sudo pacman -S xf86-video-nouveau --noconfirm --needed
@@ -39,8 +39,8 @@ sudo pacman -S firefox gimp audacity transmission-gtk vlc keepassxc libreoffice-
 sudo pacman -S arc-gtk-theme papirus-icon-theme --noconfirm --needed
 # audio
 sudo pacman -S pulseaudio pulseaudio-alsa --noconfirm --needed
-# qt applications and other
-sudo pacman -S kio gconf --noconfirm --needed
+# other, (kio package remove, is it needed?)
+sudo pacman -S gconf --noconfirm --needed
 # qemu & virtual-manager
 #sudo pacman -S qemu libvirt ebtables dnsmasq virt-manager --noconfirm --needed
 #sudo systemctl enable libvirtd.service ebtables.service dnsmasq.service
