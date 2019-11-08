@@ -2,7 +2,9 @@
 
 
 # X server + drivers, remove xf86-video-nouveau if non nvidia device
-sudo pacman -S xorg-server xorg-apps xorg-xinit xf86-video-intel xf86-video-nouveau --noconfirm --needed
+sudo pacman -S xorg-server xorg-apps xorg-xinit xf86-video-intel --noconfirm --needed
+# If have nvidia device
+#sudo pacman -S xf86-video-nouveau --noconfirm --needed
 # Display manager with gtk frontend and enable in systemd
 sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed
 sudo systemctl enable lightdm.service
@@ -21,12 +23,18 @@ sudo pacman -S openssh --noconfirm --needed
 # printing service
 sudo pacman -S cups cups-pdf system-config-printer splix --noconfirm --needed
 sudo systemctl enable org.cups.cupsd.service
+# to run appimage
+sudo pacman -S fuse2 fuse3 --noconfirm --needed
+# thunderbolt devices
+sudo pacman -S bolt --noconfirm --needed
+# openvpn and networkmanage front end
+sudo pacman -S openvpn networkmanager-openvpn
 # some fonts
 sudo pacman -S adobe-source-sans-pro-fonts cantarell-fonts noto-fonts noto-fonts-emoji terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font --noconfirm --needed
 # some useful applications
 sudo pacman -S firefox gimp audacity transmission-gtk vlc keepassxc libreoffice-still htop --noconfirm --needed
 # wireless driver
-sudo pacman -S broadcom-wl --noconfirm --needed
+#sudo pacman -S broadcom-wl --noconfirm --needed
 # themes
 sudo pacman -S arc-gtk-theme papirus-icon-theme --noconfirm --needed
 # audio
@@ -34,5 +42,5 @@ sudo pacman -S pulseaudio pulseaudio-alsa --noconfirm --needed
 # qt applications and other
 sudo pacman -S kio gconf --noconfirm --needed
 # qemu & virtual-manager
-sudo pacman -S qemu libvirt ebtables dnsmasq virt-manager --noconfirm --needed
-sudo systemctl enable libvirtd.service ebtables.service dnsmasq.service
+#sudo pacman -S qemu libvirt ebtables dnsmasq virt-manager --noconfirm --needed
+#sudo systemctl enable libvirtd.service ebtables.service dnsmasq.service
