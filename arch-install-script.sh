@@ -33,7 +33,7 @@ sed -i 's/#en_US.UTF-8\ UTF-8/en_US.UTF-8\ UTF-8/' /etc/locale.gen
 sed -i 's/#et_EE.UTF-8\ UTF-8/et_EE.UTF-8\ UTF-8/' /etc/locale.gen
 locale-gen
 
-cp locale.conf /etc/
+cp ./resources/locale.conf /etc/
 
 echo "$hostname" > /etc/hostname
 
@@ -50,8 +50,8 @@ EOF
 
 # GPT
 bootctl --path=/boot install
-cp loader.conf /boot/loader/
-cp arch.conf /boot/loader/entries/
+cp ./resources/loader.conf /boot/loader/
+cp ./resources/arch.conf /boot/loader/entries/
 uuid_of_partition=$(blkid $d_path -o value UUID)
 sed -i "s/MY_UUID/$uuid_of_partition/" /boot/loader/entries/arch.conf
 
