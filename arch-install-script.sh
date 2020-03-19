@@ -52,6 +52,6 @@ EOF
 bootctl --path=/boot install
 cp ./resources/loader.conf /boot/loader/
 cp ./resources/arch.conf /boot/loader/entries/
-uuid_of_partition=$(blkid $d_path -o value UUID)
-sed -i "s/MY_UUID/$uuid_of_partition/" /boot/loader/entries/arch.conf
+uuid_of_partition=$(blkid -s UUID -o value $d_path)
+sed -i "s/MY_UUID/$uuid_of_partition/g" /boot/loader/entries/arch.conf
 
