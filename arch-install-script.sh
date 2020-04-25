@@ -23,7 +23,7 @@ echo "Enter device's hostname:"
 read -r hostname
 
 # echo "Enter disk path (/dev/sda)" <-- DOS
-echo "Enter Linux filesystem path (/dev/sda2)"
+echo "Enter Linux root filesystem path (/dev/sda2)"
 read -r d_path
 
 ln -sf /usr/share/zoneinfo/Europe/Tallinn /etc/localtime
